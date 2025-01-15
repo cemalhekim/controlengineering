@@ -38,6 +38,13 @@ setpoint_var = tk.DoubleVar(value=1.0)
 time_var = tk.DoubleVar(value=10.0)
 dt_var = tk.DoubleVar(value=0.01)
 
+kp_var.trace_add("write", lambda *args: run_simulation())
+ki_var.trace_add("write", lambda *args: run_simulation())
+kd_var.trace_add("write", lambda *args: run_simulation())
+setpoint_var.trace_add("write", lambda *args: run_simulation())
+time_var.trace_add("write", lambda *args: run_simulation())
+dt_var.trace_add("write", lambda *args: run_simulation())
+
 # Run Simulation
 def run_simulation():
     # Simulation Parameters
